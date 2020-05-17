@@ -4,7 +4,7 @@
 ## Cluster Configuration File ##
 ################################
 
-[cluster LS-DYNA]
+[cluster LSDYNA]
 FormLayout = selectionpanel
 Category = Applications
 IconUrl = https://raw.githubusercontent.com/hirtanak/scripts/master/LS-DYNAlogo.png
@@ -19,11 +19,11 @@ Autoscale = $Autoscale
     KeyPairLocation = ~/.ssh/cyclecloud.pem
 #    KeyPairLocation = ~/examples/id_rsaccuser 
    
-        [[[cluster-init LS-DYNA:default:1.0.1]]]
+        [[[cluster-init LSDYNA:default:1.0.1]]]
         Optional = True
 
         [[[configuration]]]
-        LS-DYNA_VERSION = $configuration_LS-DYNA_version
+        LSDYNA_VERSION = $configuration_LSDYNA_version
         LICENSE = $configuration_LICENSE
         MPI = $configuration_MPI
 	MODEL = $configuration_Model
@@ -36,7 +36,7 @@ Autoscale = $Autoscale
 
         [[[configuration]]]
 
-        [[[cluster-init LS-DYNA:master:1.0.1]]]
+        [[[cluster-init LSDYNA:master:1.0.1]]]
         Optional = True
 
         [[[network-interface eth0]]]
@@ -81,7 +81,7 @@ Autoscale = $Autoscale
 
         [[[configuration]]]
 
-        [[[cluster-init LS-DYNA:execute:1.0.1]]]
+        [[[cluster-init LSDYNA:execute:1.0.1]]]
         Optional = True
 
         [[[network-interface eth0]]]
@@ -95,8 +95,8 @@ Autoscale = $Autoscale
 [parameters Required Settings]
 Order = 0
 
-    [[parameters LS-DYNA Cluster Name ]]
-    Description = "Section for configuring LS-DYNA"
+    [[parameters LSDYNA Cluster Name ]]
+    Description = "Section for configuring LSDYNA"
     Order = 11
 
     [[parameters Virtual Machines ]]
@@ -183,22 +183,22 @@ Order = 20
         Description = The credentials for the cloud provider
         ParameterType = Cloud.Credentials
 
-    [[parameters LS-DYNA Settings ]]
-    Description = "Section for configuring LS-DYNA"
+    [[parameters LSDYNA Settings ]]
+    Description = "Section for configuring LSDYNA"
     Order = 22
 
-        [[[parameter configuration_LS-DYNA_version]]]
+        [[[parameter configuration_LSDYNA_version]]]
         required = True
-        label = LS-DYNA version
-        Description = Version of LS-DYNA to install on the cluster. Package should be named LS-DYNA-<version>.tar.gz
-        defaultvalue = "r9_2_121234"
+        label = LSDYNA version
+        Description = Version of LSDYNA to install on the cluster. Package should be named LSDYNA-<version>.tar.gz
+        defaultvalue = "r9_2_124508
         config.plugin = pico.control.AutoCompleteDropdown
             [[[[list Config.Entries]]]]
-            Name = r9_2_121234
-            Label = r9_2_121234 PMPI
-            [[[[list Config.Entries]]]]
             Name = r9_2_124508
-            Label = r9_2_124508 IMPI
+            Label = r9_2_124508 PMPI
+            [[[[list Config.Entries]]]]
+            Name = r9_2_121234
+            Label = r9_2_121234 IMPI
             [[[[list Config.Entries]]]]
             Name = R9_3_0
             Label = R9_3_0 PMPI
@@ -216,10 +216,10 @@ Order = 20
         requied = False
         label = MPI type
         Description = MPI setting IMPI, Plarform MPI
-        defaultvalue = platform
+        defaultvalue = platformmpi
         config.plugin = pico.control.AutoCompleteDropdown
             [[[[list Config.Entries]]]]
-            Name = intelmpi
+            Name = intelmpi-413
             Label = Intel MPI
             [[[[list Config.Entries]]]]
             Name = platformmpi
