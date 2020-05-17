@@ -1,0 +1,15 @@
+[project]
+version = 1.0.1
+type = application
+name = LS-DYNA
+
+[blobs]
+# Files = pbspro-execution-18.1.4-0.x86_64.rpm, pbspro-server-18.1.4-0.x86_64.rpm, pbspro-client-18.1.4-0.x86_64.rpm, s-dyna_mpp_<presion>_<version>_<os and compile>_<mpi>.tar.gz, <your model>
+#Files =  pbspro-execution-18.1.4-0.x86_64.rpm, pbspro-server-18.1.4-0.x86_64.rpm, pbspro-client-18.1.4-0.x86_64.rpm, ls-dyna_mpp_s_R9_3_0_x64_redhat54_ifort131_sse2_platformmpi.tar.gz, platform_mpi.tar.gz
+
+[spec master]
+run_list = role[pbspro_master_role]
+
+[spec execute]
+run_list = role[pbspro_execute_role]
+
