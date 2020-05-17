@@ -3,24 +3,22 @@
 ## Prerequisites
 
 1. Prepaire for your LS-DYNA bilnary.
-2. Install CycleCloud CLI
+1. Install CycleCloud CLI
 
 ## How to install 
 
-1. tar zxvf cyclecloud-LS-DYNA<version>.tar.gz
-2. cd cyclecloud-LS-DYNA<version>
-2. put LS-DYNA library/model on <template>/blob directory.
-4. pug OSS PBS Pro files on <template>/blob directory.
-5. Rewrite "Files" attribute for your binariy in "project.ini" file. 
-6. run "cyclecloud project upload azure-storage" for uploading template to CycleCloud
-7. "cyclecloud import_template -f templates/pbs_extended_nfs_starccm.txt" for register this template to your CycleCloud
+1. tar zxvf cyclecloud-LSDYNA.tar.gz
+1. cd cyclecloud-LSDYNA
+1. Rewrite "Files" attribute for your LS-DYNA binariy in "project.ini" file.
+1. run "cyclecloud project upload azure-storage" for uploading template to CycleCloud
+1. "cyclecloud import_template -f templates/pbs_extended_nfs_lsdyna.txt" for register this template to your CycleCloud
 
 ## How to run LS-DNYA
 
 1. Create Execute Node manually
-2. Check Node IP Address
-3. Create hosts file for your nodes
-4. qsub ~/starccmrun.sh (sample as below)
+1. Check Node IP Address
+1. Create hosts file for your nodes
+1. qsub ~/starccmrun.sh (sample as below)
 
 <pre><code>
 #!/bin/bash
