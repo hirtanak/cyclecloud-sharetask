@@ -7,7 +7,7 @@ pbsprover = node[:pbspro][:version]
 package_name = "pbspro-execution-#{pbsprover}.x86_64.rpm"
 
 jetpack_download package_name do
-  project 'LSDYNA'
+  project 'Sharetask'
 end
 
 yum_package package_name do

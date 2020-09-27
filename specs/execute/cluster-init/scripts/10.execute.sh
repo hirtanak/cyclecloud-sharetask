@@ -21,11 +21,6 @@ echo ${CUSER} > /mnt/exports/shared/CUSER
 HOMEDIR=/shared/home/${CUSER}
 CYCLECLOUD_SPEC_PATH=/mnt/cluster-init/LS-DYNA/execute
 
-LSDYNA_VERSION=R9_3_0
-LSDYNA_PLATFORM=x64_redhat54_ifort131_sse2_platformmpi
-MPI_PLATFORM=platform_mpi
-
-
 # resource ulimit setting
 CMD1=$(grep memlock /etc/security/limits.conf | head -2)
 if [[ -z "${CMD1}" ]]; then
