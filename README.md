@@ -12,7 +12,7 @@
 1. mv project.ini.sample project.ini
 1. Uplaod "Files" attribute for your Sharetask binariy in "project.ini" file.
 1. run "cyclecloud project upload azure-storage" for uploading template to CycleCloud
-1. "cyclecloud import_template -f templates/pbs_extended_nfs_lsdyna.txt" for register this template to your CycleCloud
+1. "cyclecloud import_template -f templates/pbs_extended_nfs_sharetask.txt" for register this template to your CycleCloud
 
 1. cyclecloud delete_template Sharetask
 
@@ -21,19 +21,7 @@
 1. Create Execute Node manually
 1. Check Node IP Address
 1. Create hosts file for your nodes
-1. qsub ~/lsdynarun.sh (sample as below)
-
-<pre><code>
-#!/bin/bash
-#PBS -j oe
-#PBS -l nodes=2:ppn=16
-
-Sharetask_DIR="/shared/home/azureuser/apps"
-MPI_ROOT="/shared/home/azureuser/apps/platform_mpi/bin"
-INPUT="/shared/home/azureuser/apps/neon.refined.rev01.k"
-
-${MPI_ROOT}/mpirun -np ${NP} ${Sharetask_DIR}/ls-dyna_mpp_s_R9_3_0_x64_redhat54_ifort131_sse2_platformmpi info 
-</pre></code>
+1. qsub xxx.sh
 
 ## Known Issues
 1. This tempate support only single administrator. So you have to use same user between superuser(initial Azure CycleCloud User) and deployment user of this template
